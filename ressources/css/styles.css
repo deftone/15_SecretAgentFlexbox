@@ -1,0 +1,303 @@
+html {
+  font-size: 18px;
+  font-family: Helvetica;
+}
+
+body{
+  width: 100%;
+}
+
+.container_size{
+  width: 960px;
+  margin: auto;
+  border: 1px solid green;
+}
+
+/************************header****************************/
+
+header{
+  background-color: black;
+  display: block;
+  border: 1px solid red;
+}
+
+header img{
+  display: inline-block;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  /*vertical-align steht im child, nicht im parent wie bei flexbox*/
+  vertical-align: middle;
+  border: 1px solid green;
+}
+
+header h2{
+  margin-top: 0.66rem;
+  margin-bottom: 0.66rem;
+  margin-left: 0.8rem;
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid green;
+}
+
+/************************banner****************************/
+
+.banner{
+  height: 25rem;
+  background-image: url("../images/moto.jpeg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid yellow;
+}
+
+.container_banner{
+  background-color: black;
+  width: 25rem;
+  color: white;
+  font-weight: bold;
+  margin-top: 9rem;
+}
+
+.container_banner h2, .container_banner h1{
+  display: inline-block;
+  margin-left: 3rem;
+}
+
+.container_banner h2{
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.container_banner h1{
+  font-size: 2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+/************************nav****************************/
+
+nav{
+  background-color: firebrick;
+  border: 1px solid white;
+  width: inherit;
+}
+
+.nav_item{
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  text-align:center;
+  border: 1px solid blue;
+  padding-right: 105.9px; /* ok, da der abstand sich nicht aendert */
+}
+
+.nav_item:last-child{
+  padding-right: 0px;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+}
+
+/************************products****************************/
+.container_size_product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 960px;
+  margin: auto;
+  border: 1px solid blue;
+}
+
+.container_product{
+  display: inline-flex;
+  flex-direction: column;
+  border: 4px solid black;
+  width: 30%;
+  /*in order to center the text:*/
+  text-align: center;
+}
+
+.container_product_image{
+  display: inline-flex;
+  justify-content: center;
+  height: 11rem;
+  padding: 2rem;
+  border: 1px solid brown;
+}
+
+.container_product img{
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  border: 1px solid grey;
+}
+
+.container_product h2{
+  display: inline-block;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/************************info****************************/
+
+.container_size_info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 960px;
+  margin: auto;
+  border: 1px solid green;
+}
+
+.container_info{
+  display: inline-flex;
+  flex-direction: column;
+  width: 35%;
+  border: 1px solid orange;
+}
+
+.container_info h2{
+  display: inline-block;
+  color: white;
+  background-color: black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+
+/************************footer****************************/
+
+footer{
+  height: 5rem;
+  margin-top: 4rem;
+  background-color: black;
+  text-align: left;
+}
+
+footer h2{
+  display: inline-block;
+  color: white;
+  margin-top: 2rem;
+}
+
+/************************media queries****************************/
+@media only screen and (min-width: 1024px){
+  /*navigation*/
+  nav .small {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .container_size{
+    width: 100%;
+  }
+
+  /*general rule to hide everything in medium screensize*/
+  .hidden_medium{
+    display: none;
+  }
+
+    /*navigation*/
+  nav .container_size{
+    display: none;
+  }
+
+  nav .small {
+    text-align: center;
+  }
+
+  /*products*/
+  .container_size_product{
+    width: 100%;
+  }
+
+  .container_product{
+    width: 47%;
+  }
+
+  /*info*/
+  .container_size_info{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 470px){
+
+  /*general rule to hide everything in small screensize*/
+  .hidden_small{
+    display: none;
+  }
+
+  nav{
+    background-color: firebrick;
+  }
+
+  /*banner*/
+  .banner{
+    height: 15rem;
+  }
+
+  .container_banner{
+    margin-top: 10rem;
+    width: 100%;
+  }
+
+  .container_banner h2, .container_banner h1{
+    margin-left: 2rem;
+  }
+
+  .container_banner h2{
+    font-size: .77rem;
+    margin-top: 1rem;
+    /*overflow: hidden;*/
+  }
+
+  .container_banner h1{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /*products*/
+  .container_size_product{
+    width: 90%;
+    margin: auto;
+  }
+
+  .container_product{
+    width: 98%;
+  }
+
+  /*info*/
+  .container_size_info{
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .container_info{
+    width: 100%;
+    margin: auto;
+  }
+
+  .container_info:last-child{
+    margin-top: 0.5rem;
+  }
+
+  footer{
+    text-align: center;
+  }
+}
